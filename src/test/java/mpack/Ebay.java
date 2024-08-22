@@ -6,7 +6,7 @@ import java.util.List;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
-public class Assignment4 extends Base
+public class Ebay extends Base
 { 
 	public String getResult()
 	{
@@ -37,7 +37,7 @@ public class Assignment4 extends Base
 	}
 	public static void main(String[] args)
 	{
-		Assignment4 ass4 = new Assignment4();
+		Ebay ass4 = new Ebay();
 		ass4.initializeDriver("firefox");
 		driver.get("https://www.ebay.com/");
 		driver.findElement(By.cssSelector("#gh-ac")).sendKeys("Smart Watches");

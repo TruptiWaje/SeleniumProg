@@ -5,10 +5,10 @@ import java.time.Duration;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
-public class Assignment2 extends Base {
+public class Facebook extends Base {
 	public static void main(String[] args)
 	{
-		Assignment2 ass2 = new Assignment2();
+		Facebook ass2 = new Facebook();
 		ass2.initializeDriver("chrome");
 		driver.get("http://www.fb.com/");
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));

@@ -5,12 +5,12 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 
-public class Assignment extends Base{
+public class ToolsQA extends Base{
 
 	public static void main(String[] args) throws InterruptedException
 	{
-		Assignment ass = new Assignment();
-		ass.initializeDriver("firefox");
+		ToolsQA tools = new ToolsQA();
+		tools.initializeDriver("firefox");
 		driver.get("https://www.toolsqa.com/");
 		String title = driver.getTitle(); //get title of the page and compare and print PASS or FAIL
 		if(title.equals("Tools QA"))
@@ -35,7 +35,7 @@ public class Assignment extends Base{
 		// navigate forward and refresh the page
 		driver.navigate().forward();
 		driver.navigate().refresh();
-		ass.closeBrowser();
+		tools.closeBrowser();
 
 	}
 
