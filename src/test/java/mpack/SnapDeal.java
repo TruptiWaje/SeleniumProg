@@ -9,9 +9,10 @@ public class SnapDeal extends Base {
 		SnapDeal snap = new SnapDeal();
 		snap.initializeDriver("Chrome");
 		driver.get("https://snapdeal.com/");
+		//code to use mouse actions
 		Actions a = new Actions(driver);
-		WebElement movetosignup = driver.findElement(By.cssSelector(".accountUserName.col-xs-12.reset-padding"));
-		a.moveToElement(movetosignup).perform();
+		WebElement moveToSignup = driver.findElement(By.cssSelector(".accountUserName.col-xs-12.reset-padding"));
+		a.moveToElement(moveToSignup).perform();
 		Thread.sleep(2000);
 		//Code to access iframe
 		driver.get("https://demoqa.com/frames");
