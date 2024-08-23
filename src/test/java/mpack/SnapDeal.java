@@ -1,42 +1,25 @@
 package mpack;
 
-import java.util.Set;
-
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
-
-public class SnapDeal {
+public class SnapDeal extends Base {
 	public static void main(String[] args) throws InterruptedException {
-		WebDriverManager.chromedriver().setup();
-		WebDriver driver = new ChromeDriver();
-		driver.manage().window().maximize();
+		SnapDeal snap = new SnapDeal();
+		snap.initializeDriver("Chrome");
 		driver.get("https://snapdeal.com/");
 		Actions a = new Actions(driver);
 		WebElement movetosignup = driver.findElement(By.cssSelector(".accountUserName.col-xs-12.reset-padding"));
 		a.moveToElement(movetosignup).perform();
-		Thread.sleep(3000);
-		WebElement iframe = driver.findElement(By.id("loginIframe"));
+		Thread.sleep(2000);
+		//Code to access iframe
+		driver.get("https://demoqa.com/frames");
+		WebElement iframe=driver.findElement(By.id("frame1"));
 		driver.switchTo().frame(iframe);
-		WebElement cli = driver.findElement(By.xpath("//a[contains(text(),'login')]"));
-		a.moveToElement(cli).click().build().perform();
-		driver.findElement(By.id("userName")).sendKeys("trupti.waje@joshsoftware.com");
-
-		String orgWindow = driver.getWindowHandle();
-		System.out.println(orgWindow);
-
-		driver.findElement(By.cssSelector("#checkUser")).click();
-		
-		driver.findElement(By.xpath("//input[@id='j_number']")).sendKeys("9763444557");
-       
-		//driver.findElement(By.cssSelector("#j_name")).sendKeys("Trupti Waje");
-		//driver.findElement(By.cssSelector("#j_dob")).click();
-		//driver.findElement(By.xpath("(//th[@class='datepicker-switch'])[1]")).click();
-
+		WebElement text = driver.findElement(By.xpath("//h1[@id='sampleHeading']"));
+		System.out.println("Frame1 text: " + text.getText());
+		snap.closeBrowser();
 	}
 }
 
