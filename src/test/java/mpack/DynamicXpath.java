@@ -6,7 +6,7 @@ public class DynamicXpath extends Base{
 	public static void main(String[] args) throws InterruptedException
 	{
 		DynamicXpath dynamic = new DynamicXpath();
-		dynamic.initializeDriver("Chrome");
+		dynamic.initializeDriver("firefox");
 		driver.get("https://www.amazon.in/ref=nav_logo");
 		driver.findElement(By.id("nav-link-accountList-nav-line-1")).click();
 		Thread.sleep(1000);
